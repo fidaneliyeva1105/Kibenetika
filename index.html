@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="az">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,7 @@
         <nav>
             <a href="#kibertahlukesizlik" style="color: white; text-decoration: none; margin-right: 15px; font-size: 15px; font-weight: bold;">🛡️ Kibertəhlükəsizlik</a>
             <a href="#kripto" style="color: white; text-decoration: none; margin-right: 15px; font-size: 15px; font-weight: bold;">🔑 Şifrələmələr</a>
+            <a href="#sifre-olcer" style="color: white; text-decoration: none; margin-right: 15px; font-size: 15px; font-weight: bold;">📊 Şifrə Ölçən</a>
             <a href="#test-bolmesi" style="color: white; text-decoration: none; margin-right: 15px; font-size: 15px; font-weight: bold;">🕵️‍♂️ Kiber Test</a>
             <a href="#kibernetika" style="color: white; text-decoration: none; font-size: 15px; font-weight: bold;">🧠 Kibernetika</a>
         </nav>
@@ -54,6 +55,15 @@
                     margin-right: 10px;
                     accent-color: #00ff66;
                 }
+                .izah-kutusu {
+                    background-color: #1c2128;
+                    border-left: 4px solid #ff3333;
+                    padding: 15px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    border-radius: 0 6px 6px 0;
+                    display: none;
+                }
             </style>
             <p class="haker-yazi">⚠️ DİQQƏT: SİSTEMƏ SIZMA CƏHDİ BLOKLANDI...</p>
         </div>
@@ -82,54 +92,75 @@
             <div id="qusdiliCixis" style="width: 100%; padding: 12px; background-color: #0d1117; color: #ff00ff; border: 1px solid #ff00ff; border-radius: 6px; font-family: monospace; font-size: 18px; font-weight: bold; min-height: 25px; box-sizing: border-box; word-break: break-all;">...</div>
         </section>
 
-        <!-- 6. BÖLMƏ: YENİ AĞILLI KİBER SƏVİYYƏ IMTAHANI (YEKUN YOXOLUNMA) -->
-        <section id="test-bolmesi" style="background-color: #161b22; border: 2px solid #00ff66; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 0 20px rgba(0,255,102,0.1);">
+        <!-- 🔥 6. YENİ BÖLMƏ: ŞİFRƏ GÜCÜ ÖLÇƏN LAB -->
+        <section id="sifre-olcer" style="background-color: #161b22; border: 2px solid #ffff00; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 0 20px rgba(255,255,0,0.05);">
+            <h2 style="color: #ffff00; margin-top: 0; font-size: 22px;">📊 Canlı Şifrə Gücü Ölçən</h2>
+            <p style="color: #8b949e; font-size: 15px;">Şifrənizi yazın və hakerlərin onu nə qədər vaxta qıra biləcəyini analiz edin:</p>
+            <hr style="border: 1px dashed #30363d; margin-bottom: 20px;">
+
+            <p style="color: #ffff00; margin-bottom: 5px;"><strong>Şifrə Yoxlama Xanası:</strong></p>
+            <input type="text" id="sifreInput" oninput="sifreYoxla()" placeholder="Şifrənizi bura daxil edin..." style="width: 100%; padding: 12px; background-color: #0d1117; color: white; border: 1px solid #30363d; border-radius: 6px; margin-bottom: 15px; font-size: 15px; box-sizing: border-box;">
+
+            <!-- GÜC BAR-I -->
+            <div style="width: 100%; background-color: #21262d; height: 10px; border-radius: 5px; margin-bottom: 15px; overflow: hidden;">
+                <div id="gucBari" style="width: 0%; height: 100%; background-color: red; transition: width 0.3s ease;"></div>
+            </div>
+            
+            <p style="color: white; margin: 0; font-size: 16px;">🛡️ Sistem Analizi: <span id="gucMetni" style="color: red; font-weight: bold;">Şifrə daxil edilməyib</span></p>
+        </section>
+
+        <!-- 7. BÖLMƏ: İZAHI OLAN KİBER İMTAHAN SİSTEMİ -->
+        <section id="test-bolmesi" style="background-color: #161b22; border: 2px solid #00ff66; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
             <h2 style="color: #00ff66; text-align: center; margin-top: 0; font-size: 24px;">🕵️‍♂️ KİBER SƏVİYYƏ İMTAHANI</h2>
-            <p style="text-align: center; color: #8b949e; margin-bottom: 25px;">Bütün sualları cavablandırın və ən aşağıda sistemin sizi qiymətləndirməsini gözləyin:</p>
+            <p style="text-align: center; color: #8b949e; margin-bottom: 25px;">Cavabları qeyd edin və yekun hesabatı altda canlı olaraq görün:</p>
             <hr style="border: 1px dashed #30363d; margin-bottom: 25px;">
 
             <!-- SUAL 1 -->
-            <div style="margin-bottom: 30px;" class="sual-bloku">
+            <div style="margin-bottom: 15px;">
                 <p style="color: #ffff00; font-size: 17px; margin-bottom: 12px;"><strong>Sual 1: Sosial şəbəkə şifrəndə hansı məlumatlar var?</strong></p>
                 <label class="radio-label"><input type="radio" name="q1" value="0"> A) Adım, soyadım və ya doğum ilim var.</label>
-                <label class="radio-label"><input type="radio" name="q1" value="1"> B) Böyük-kiçik hərflər, rəqəm və simvollar (? , !, @) var. ✅</label>
+                <label class="radio-label"><input type="radio" name="q1" value="1"> B) Böyük-kiçik hərflər, rəqəm və simvollar (? , !, @) var.</label>
+                <div id="izah1" class="izah-kutusu"></div>
             </div>
 
             <!-- SUAL 2 -->
-            <div style="margin-bottom: 30px;" class="sual-bloku">
+            <div style="margin-bottom: 15px;">
                 <p style="color: #ffff00; font-size: 17px; margin-bottom: 12px;"><strong>Sual 2: WhatsApp-da tanımadığın nömrədən unikal bir 'hədiyyə linki' gəlsə nə edərsən?</strong></p>
                 <label class="radio-label"><input type="radio" name="q2" value="0"> A) Şansımı yoxlamaq üçün dərhal linkə klikləyərəm.</label>
-                <label class="radio-label"><input type="radio" name="q2" value="1"> B) Mesajı silərəm və həmin şübhəli nömrəni bloklayaram. ✅</label>
+                <label class="radio-label"><input type="radio" name="q2" value="1"> B) Mesajı silərəm və həmin şübhəli nömrəni bloklayaram.</label>
+                <div id="izah2" class="izah-kutusu"></div>
             </div>
 
             <!-- SUAL 3 -->
-            <div style="margin-bottom: 30px;" class="sual-bloku">
+            <div style="margin-bottom: 15px;">
                 <p style="color: #ffff00; font-size: 17px; margin-bottom: 12px;"><strong>Sual 3: Kafe və ya parkdakı pulsuz, şifrəsiz Wi-Fi şəbəkəsinə qoşulanda nəyə diqqət etməlisiniz?</strong></p>
-                <label class="radio-label"><input type="radio" name="q3" value="1"> A) Heç vaxt bank tətbiqlərinə girmirəm və kart məlumatı yazmıram. ✅</label>
+                <label class="radio-label"><input type="radio" name="q3" value="1"> A) Heç vaxt bank tətbiqlərinə girmirəm və kart məlumatı yazmıram.</label>
                 <label class="radio-label"><input type="radio" name="q3" value="0"> B) İnternet pulsuzdur deyə fürsətdən istifadə edib kartla alış-veriş edirəm.</label>
+                <div id="izah3" class="izah-kutusu"></div>
             </div>
 
             <!-- SUAL 4 -->
-            <div style="margin-bottom: 30px;" class="sual-bloku">
+            <div style="margin-bottom: 15px;">
                 <p style="color: #ffff00; font-size: 17px; margin-bottom: 12px;"><strong>Sual 4: Telefonunuza gələn tətbiq (proqram) yeniləmələrini nə vaxt yükləyirsiniz?</strong></p>
                 <label class="radio-label"><input type="radio" name="q4" value="0"> A) Yaddaş tutmasın deyə heç vaxt yeniləmirəm və ya çox gecikdirirəm.</label>
-                <label class="radio-label"><input type="radio" name="q4" value="1"> B) Yeniləmə gələn kimi dərhal ən son versiyaya yükləyirəm. ✅</label>
+                <label class="radio-label"><input type="radio" name="q4" value="1"> B) Yeniləmə gələn kimi dərhal ən son versiyaya yükləyirəm.</label>
+                <div id="izah4" class="izah-kutusu"></div>
             </div>
 
             <!-- SUAL 5 -->
-            <div style="margin-bottom: 30px;" class="sual-bloku">
+            <div style="margin-bottom: 25px;">
                 <p style="color: #ffff00; font-size: 17px; margin-bottom: 12px;"><strong>Sual 5: Özünü bank işçisi kimi təqdim edən biri zəng edib kartın arxasındakı 3 rəqəmli (CVV) kodu istəsə nə edərsiniz?</strong></p>
                 <label class="radio-label"><input type="radio" name="q5" value="0"> A) Bank işçisidir deyə kömək etmək üçün kodu ona deyərəm.</label>
-                <label class="radio-label"><input type="radio" name="q5" value="1"> B) Kodu verməkdən imtina edib zəngi dərhal bağlayaram. ✅</label>
+                <label class="radio-label"><input type="radio" name="q5" value="1"> B) Kodu verməkdən imtina edib zəngi dərhal bağlayaram.</label>
+                <div id="izah5" class="izah-kutusu"></div>
             </div>
 
-            <!-- IMTAHANI BITIR DUYMESI -->
-            <button onclick="imtahaniYoxla()" style="background-color: #00ff66; color: #0d1117; border: none; padding: 15px; width: 100%; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 6px; letter-spacing: 1px; transition: all 0.3s ease;">
-                📊 Nəticəni Hesabla və Sistemi Yoxla
+            <button onclick="imtahaniYoxla()" style="background-color: #00ff66; color: #0d1117; border: none; padding: 15px; width: 100%; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 6px; letter-spacing: 1px;">
+                📊 Nəticəni Hesabla və Səhvlərimi Göstər
             </button>
         </section>
 
-        <!-- 7. BÖLMƏ: KİBERNETİKA MƏLUMATI -->
+        <!-- 8. BÖLMƏ: KİBERNETİKA MƏLUMATI -->
         <section id="kibernetika" style="background-color: #161b22; border: 1px solid #30363d; padding: 30px; border-radius: 12px; margin-bottom: 30px;">
             <h2 style="color: #00ffff; border-left: 4px solid #00ffff; padding-left: 12px; font-size: 22px; margin-top: 0;">🧠 Kibernetika Nədir?</h2>
             <p style="color: #8b949e; font-size: 16px;">
@@ -137,7 +168,7 @@
             </p>
         </section>
 
-        <!-- 8. BÖLMƏ: ƏLAQƏ FORMASI -->
+        <!-- 9. BÖLMƏ: ƏLAQƏ FORMASI -->
         <section style="background-color: #161b22; border: 2px solid #ff3333; padding: 30px; border-radius: 12px;">
             <h2 style="color: #ff3333; text-align: center; margin-top: 0; font-size: 24px;">📩 Bizə Mesaj Yazın</h2>
             <form action="https://formspree.io/f/xpqnwyer" method="POST">
@@ -153,44 +184,83 @@
 
     <!-- SCRIPT PANELİ -->
     <script>
-        // 📊 AĞILLI IMTAHAN SİSTEMİ (YEKUN CAVAB VERMƏ)
+        // 📊 CANLI ŞİFRƏ GÜCÜ ÖLÇƏN ALƏT
+        function sifreYoxla() {
+            var sifre = document.getElementById('sifreInput').value;
+            var bar = document.getElementById('gucBari');
+            var metn = document.getElementById('gucMetni');
+            var bal = 0;
+
+            if (sifre.length === 0) {
+                bar.style.width = "0%";
+                metn.innerText = "Şifrə daxil edilməyib";
+                metn.style.color = "red";
+                return;
+            }
+
+            if (sifre.length >= 6) bal += 1;
+            if (sifre.length >= 10) bal += 1;
+            if (/[A-Z]/.test(sifre)) bal += 1;
+            if (/[0-9]/.test(sifre)) bal += 1;
+            if (/[^A-Za-z0-9]/.test(sifre)) bal += 1;
+
+            if (bal <= 2) {
+                bar.style.width = "30%";
+                bar.style.backgroundColor = "#ff3333";
+                metn.innerText = "🚨 ÇOX ZƏİF (Hakerlər 1 saniyəyə qıra bilər!)";
+                metn.style.color = "#ff3333";
+            } else if (bal <= 4) {
+                bar.style.width = "60%";
+                bar.style.backgroundColor = "#ffff00";
+                metn.innerText = "⚡ ORTA GÜCLÜ (Daha çox simvol əlavə edin)";
+                metn.style.color = "#ffff00";
+            } else {
+                bar.style.width = "100%";
+                bar.style.backgroundColor = "#00ff66";
+                metn.innerText = "👑 KEÇİLMƏZ QALXAN! (Tamamilə təhlükəsiz şifrə)";
+                metn.style.color = "#00ff66";
+            }
+        }
+
+        // İMTAHAN SİSTEMİ
         function imtahaniYoxla() {
             var dogruSayi = 0;
             var butunSuallarSecilib = true;
 
-            // 1-dən 5-ə qədər bütün radio düymələrini yoxlayır
+            var izahlar = {
+                1: { duzguncavab: "B variantı", problemHelli: "💡 <strong>Həll yolu:</strong> Doğum ili və ad olan şifrələr sosial mühəndislik proqramları ilə çox asan sındırılır. Şifrənizi dərhal dəyişib bura böyük-kiçik hərflər, rəqəmlər və ($, !, #) kimi simvollar əlavə etməlisiniz." },
+                2: { duzguncavab: "B variantı", problemHelli: "💡 <strong>Həll yolu:</strong> Bu bir fişinq tələsidir. Heç bir şirkət WhatsApp-dan sizə pulsuz uduş linki göndərməz. Təhlükəni önləmək üçün linki açmadan dərhal mesajı silib nömrəni bloklamaq mütləqdir." },
+                3: { duzguncavab: "A variantı", problemHelli: "💡 <strong>Həll yolu:</strong> İctimai Wi-Fi şəbəkələri şifrəsiz olduğu üçün hakerlər eyni internetdə olan digər cihazların məlumatlarını asanlıqla oğurlaya bilirlər. Həll yolu: ictimai yerlərdə yalnız öz mobil internetinizdən istifadə edin!" },
+                4: { duzguncavab: "B variantı", problemHelli: "💡 <strong>Həll yolu:</strong> Yeniləmələr sistemin təhlükəsizlik boşluqlarını (açıq qapılarını) bağlayır. Əgər tətbiqləri yeniləməsəniz, hakerlər o köhnə boşluqdan istifadə edərək telefonunuza gizlicə sızacaqlar." },
+                5: { duzguncavab: "B variantı", problemHelli: "💡 <strong>Həll yolu:</strong> Heç bir rəsmi bank əməkdaşı sizdən telefon zəngində kartın CVV kodunu və ya şifrəsini istəməz. Kodu istəyən 100% fırıldaqçıdır. Həll yolu: Kodu verməyin, zəngi qapadın və dərhal bankın rəsmi nömrəsinə şikayət edin." }
+            };
+
             for (var i = 1; i <= 5; i++) {
                 var secim = document.querySelector('input[name="q' + i + '"]:checked');
-                if (secim) {
-                    if (secim.value === "1") {
-                        dogruSayi++;
-                    }
-                } else {
-                    butunSuallarSecilib = false;
-                }
+                if (!secim) butunSuallarSecilib = false;
             }
 
-            // Əgər istifadəçi hansısa sualı boş qoyubsa xəbərdarlıq edir
             if (!butunSuallarSecilib) {
-                alert('⚠️ Diqqət! Zəhmət olmasa imtahanı bitirmək üçün bütün 5 suala da cavab verin.');
+                alert('⚠️ Diqqət! Zəhmət olmasa testi bitirmək üçün bütün 5 suala da cavab verin.');
                 return;
             }
 
-            // Nəticəyə görə kiber rəy təyin olunur
-            var kiberRey = "";
-            if (dogruSayi === 5) {
-                kiberRey = "👑 MÜKƏMMƏL! Sən tam bir Kiber Müdafiəçisən. Hakerlərin sənə qarşı heç bir şansı yoxdur!";
-            } else if (dogruSayi >= 3) {
-                kiberRey = "⚡ YAXŞI! Təhlükəsizlik qaydalarını bilirsən, amma bəzi kodlarında və ya diqqətsizliyində boşluqlar (bug) var. Ehtiyatlı ol!";
-            } else {
-                kiberRey = "🚨 TƏHLÜKƏ! Kiber gigiyena qaydaların çox zəifdir. Hakerlər səni hər an sındıra (hack edə) bilər! Saytımızdakı məlumatları yenidən diqqətlə oxu.";
+            for (var i = 1; i <= 5; i++) {
+                var secim = document.querySelector('input[name="q' + i + '"]:checked');
+                var izahDiv = document.getElementById('izah' + i);
+                izahDiv.style.display = "block";
+
+                if (secim.value === "1") {
+                    dogruSayi++;
+                    izahDiv.style.borderLeftColor = "#00ff66";
+                    izahDiv.innerHTML = "<span style='color:#00ff66; font-weight:bold;'>✅ Sizin Cavabınız DOĞRUDUR!</span><br>" + izahlar[i].problemHelli;
+                } else {
+                    izahDiv.style.borderLeftColor = "#ff3333";
+                    izahDiv.innerHTML = "<span style='color:#ff3333; font-weight:bold;'>❌ Sizin Cavabınız SƏHVDİR!</span> (Doğru cavab: " + izahlar[i].duzguncavab + ")<br>" + izahlar[i].problemHelli;
+                }
             }
 
-            // Yekun nəticə pəncərəsi
-            alert('📊 İMTAHAN NƏTİCƏNİZ:\n\n' +
-                  'Düzgün cavab: ' + dogruSayi + ' / 5\n' +
-                  'Səhv cavab: ' + (5 - dogruSayi) + ' / 5\n\n' +
-                  'Sistem Rəyi:\n' + kiberRey);
+            alert('📊 TEST HESABATI HAZIRLANDI!\n\nSualların altına baxaraq həll yollarını oxuya bilərsiniz.\n\nToplam Düzgün: ' + dogruSayi + ' / 5');
         }
 
         // Sezar Şifrələməsi
@@ -215,9 +285,7 @@
             for (var i = 0; i < input.length; i++) {
                 var herf = input.charAt(i);
                 output += herf;
-                if (saitler.includes(herf)) {
-                    output += 'g' + herf;
-                }
+                if (saitler.includes(herf)) output += 'g' + herf;
             }
             document.getElementById('qusdiliCixis').innerText = output || '...';
         }
